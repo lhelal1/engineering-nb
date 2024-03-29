@@ -1,0 +1,43 @@
+Consider a simple series circuit with a DC power source and two resistors, as shown below, \textbf{assuming the passive convention}:
+
+\begin{figure}[ht]
+  \centering
+  \begin{circuitikz}[american voltages]
+    \draw (0,0) to[V, l=$V_g$, i=$i_g$] (0,2)
+          to[R, l=$R_1$, v=$V_1$] (2,2)
+          to[R, l=$R_2$, v=$V_2$] (4,2)
+          -- (4,0) -- (0,0);
+  \end{circuitikz}
+  \caption{Series circuit with a DC power source and two resistors}
+\end{figure}
+
+According to Kirchhoff's Voltage Law (KVL), the sum of the voltages around any closed loop in the circuit is equal to zero. For this circuit, the equation is:
+
+\begin{equation}
+V_g = V_1 + V_2
+\end{equation}
+
+According to Ohm's law, the voltage across a resistor is equal to the current through the resistor times the resistance of the resistor. So we can write:
+
+\begin{align}
+V_1 &= i_g \cdot R_1 \\
+V_2 &= i_g \cdot R_2
+\end{align}
+
+Substituting these equations into the KVL equation, we get:
+
+\begin{equation}
+V_g = i_g \cdot R_1 + i_g \cdot R_2 = i_g \cdot (R_1 + R_2)
+\end{equation}
+
+This equation tells us that the voltage of the power source is equal to the current through the circuit times the total resistance of the circuit.
+
+According to Kirchhoff's Current Law (KCL), the sum of the currents entering a node (or a junction) equals the sum of the currents leaving the node. For this circuit, the equation is:
+
+\begin{equation}
+i_g = i_1 = i_2
+\end{equation}
+
+This equation tells us that the current through the power source is equal to the current through each resistor, which is a characteristic of series circuits.
+
+It's important to note that the direction of the loop does not affect the application of KVL. Whether we move in the direction of the current (from $+$ to $-$) or against it (from $-$ to $+$), the sum of the voltages around the loop is still zero. This is true even in the presence of a power source or a load, where the power is negative or positive, respectively.
